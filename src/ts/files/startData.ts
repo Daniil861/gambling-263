@@ -2,7 +2,7 @@ import { IStartData } from '../../types';
 
 
 const startData: IStartData = {
-	bank: 5000, // 1000
+	bank: 1000, // 1000
 
 	countBet: 5,
 	maxBet: 1000,
