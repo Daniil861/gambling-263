@@ -221,7 +221,6 @@ function generateCoeff() {
 	} else if (state > 7) {
 		config_game.current_coeff = getRandom_2(4, 7);
 	}
-	config_game.current_coeff = 1;
 }
 
 // function generateStartSpeed() {
