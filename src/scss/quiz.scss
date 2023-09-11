@@ -1,0 +1,127 @@
+//========================================================================================================================================================
+.quiz {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	display: flex;
+
+	width: 100%;
+	height: 100%;
+
+	transform: translateY(-20px);
+
+	opacity: 0;
+	z-index: -1;
+
+	transition: all 0.7s ease 0.3s;
+
+	._quiz & {
+		opacity: 1;
+		z-index: 10;
+		transform: translateY(0);
+	}
+
+	// .quiz__body
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		row-gap: 15px;
+
+		width: 100%;
+		min-height: 100%;
+		padding: 15px;
+
+		background-image: linear-gradient(180deg, rgba(255, 138, 0, 0) 3.62%, rgba(255, 138, 0, 0.7) 100%);
+	}
+
+	&__button-home {
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+
+		background: url("@img/icons/arrow-left.svg") center / 29px 25px no-repeat,
+			linear-gradient(180deg, #ffaf37 0%, #d95b00 100%);
+		border: 1px solid #ffffff;
+
+		transition: all 0.3s ease 0s;
+
+		&:active {
+			transform: translateY(3px);
+		}
+	}
+
+	// .quiz__title
+
+	&__title {
+		text-transform: uppercase;
+	}
+
+	&__question-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		background-color: rgba(69, 69, 69, 0.49);
+		border: 1px solid #ffffff;
+
+		padding-block: 60px;
+		.quiz__body._hide & {
+			opacity: 0;
+		}
+	}
+
+	// .quiz__question
+
+	&__question {
+		max-width: 231px;
+		margin-inline: auto;
+		text-align: center;
+		transition: all 0.3s ease 0s;
+	}
+
+	// .quiz__answers
+
+	&__answers {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: 20px;
+		transition: all 0.3s ease 0s;
+
+		&._hold {
+			pointer-events: none;
+		}
+		.quiz__body._hide & {
+			opacity: 0;
+		}
+	}
+
+	// .quiz__answer
+
+	&__answer {
+		width: 260px;
+		height: 86px;
+		span {
+			text-transform: capitalize;
+			transform: skewX(20deg);
+		}
+		&._active {
+			background-image: linear-gradient(180deg, #8ef6ff 0%, #0070d9 100%);
+		}
+		&._lose {
+			background-image: linear-gradient(180deg, #ff2e2e 0%, #a22401 100%);
+		}
+		&._win {
+			background-image: linear-gradient(180deg, #37ff57 0%, #00d998 100%);
+		}
+	}
+
+	&__pagination {
+		position: absolute;
+		bottom: 15px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}

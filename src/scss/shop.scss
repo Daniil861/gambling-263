@@ -1,0 +1,125 @@
+.shop {
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	min-height: 100%;
+
+	transform: scale(1.01);
+
+	opacity: 0;
+	visibility: hidden;
+
+	transition: all 0.7s ease 0.3s;
+
+	._shop & {
+		opacity: 1;
+		visibility: visible;
+		transform: scale(1);
+	}
+
+	// .shop__body
+
+	&__body {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: 15px;
+
+		width: 100%;
+		min-height: 100vh;
+		height: 100vh;
+
+		padding: 24px 14px;
+
+		overflow-y: auto;
+	}
+
+	&__header {
+	}
+
+	&__items {
+		display: flex;
+		column-gap: 30px;
+	}
+
+	// .shop__item
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		row-gap: 25px;
+
+		transition: all 0.7s ease 0s;
+	}
+
+	&__image-box {
+		position: relative;
+
+		display: flex;
+
+		justify-content: center;
+
+		width: 153px;
+		height: 192px;
+
+		border-radius: 10px;
+		border: 1px solid #9250fe;
+		background: #1b1536;
+	}
+
+	&__image {
+		padding-top: 25px;
+	}
+
+	&__price-box {
+		position: absolute;
+		bottom: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		column-gap: 10px;
+
+		transition: all 0.7s ease 0s;
+
+		._bought & {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+
+	&__icon {
+		width: 40px;
+		height: 23px;
+
+		background-image: url("@img/icons/coin.png");
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	&__price {
+		color: #fff;
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	}
+
+	&__button {
+		position: relative;
+
+		._selected & {
+			background: linear-gradient(180deg, #d7aff6 0%, #ab6be0 23.75%, #ba73f4 47.19%, #994fda 70.1%, #6d30a7 100%);
+		}
+	}
+}

@@ -1,0 +1,111 @@
+.preloader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+
+	width: 100%;
+	min-height: 100vh;
+
+	overflow: hidden;
+
+	transition: all 0.3s ease 0s;
+
+	&__block-acces {
+	}
+
+	&__acces {
+	}
+
+	&__button-box {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		padding-bottom: 30px;
+	}
+	&__hero {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		animation: fly 10s ease infinite;
+		img {
+			transform: rotate(18deg);
+		}
+	}
+
+	// .preloader__button
+
+	&__button {
+	}
+}
+
+.acces-preloader {
+	position: relative;
+	z-index: 4;
+
+	display: flex;
+	flex-direction: column;
+	max-height: 100vh;
+	max-width: 100vw;
+	padding-block: 20px 170px;
+	padding-inline: 10px;
+
+	font-family: "Impact";
+
+	overflow: auto;
+
+	&._hide {
+		display: none;
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+
+		row-gap: 15px;
+		color: #fff;
+	}
+
+	&__title {
+		letter-spacing: 0.5px;
+		@media (min-width: 700px) and (min-height: 700px) {
+			font-size: 36px;
+		}
+	}
+
+	&__text-box {
+		display: flex;
+		flex-direction: column;
+	}
+
+	// .acces-preloader__text
+
+	&__text {
+		padding-bottom: 12px;
+	}
+
+	&__link {
+		color: #ebff00;
+	}
+}
+
+.text-pre {
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 1.25;
+	text-transform: uppercase;
+	color: #fff;
+	letter-spacing: 0.5px;
+	@media (min-width: 700px) and (min-height: 700px) {
+		font-size: 20px;
+	}
+
+	&__title {
+		text-transform: uppercase;
+	}
+}
