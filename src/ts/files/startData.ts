@@ -19,8 +19,8 @@ const startData: IStartData = {
 
 	prices: {
 		price_1: 100,
-		price_2: 100,
-		price_3: 100,
+		price_2: 3000,
+		price_3: 5000,
 		price_4: 1500
 	}
 

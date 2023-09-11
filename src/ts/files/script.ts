@@ -467,7 +467,7 @@ function drawCanvas() {
 }
 
 window.addEventListener('resize', () => {
-	setCanvas();
+	if (fieldBody) setCanvas();
 })
 //======
 // function intervalCoeff() {
