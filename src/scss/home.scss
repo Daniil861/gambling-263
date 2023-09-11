@@ -207,6 +207,11 @@
 		._fly & {
 			animation: fly_air 1s ease infinite 0.5s;
 		}
+		._lose & {
+			transition: all 2s ease 0s;
+			left: 150%;
+			bottom: 110%;
+		}
 	}
 
 	&__pin {
@@ -263,6 +268,10 @@
 	top: 0;
 	left: 0;
 	z-index: 1;
+	._loader & {
+		opacity: 0;
+		visibility: hidden;
+	}
 }
 .footer {
 	// .footer__body

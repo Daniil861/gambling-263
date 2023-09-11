@@ -221,7 +221,7 @@ function generateCoeff() {
 	} else if (state > 7) {
 		config_game.current_coeff = getRandom_2(4, 7);
 	}
-
+	config_game.current_coeff = 1;
 }
 
 // function generateStartSpeed() {
@@ -278,7 +278,6 @@ function generateLineColor() {
 // }
 
 function moovePlayer() {
-
 	drawCanvas();
 
 	if (!fieldBody.classList.contains('_fly') && config_game.state === 2) {
@@ -317,12 +316,13 @@ function drawItemToCoord(item: HTMLElement, bottom: number, left: number, rotate
 }
 
 function animateFly() {
-	encreaseCoeff();
 	moovePlayer();
 	drawItemToCoord(player, playerConfig.bottom, playerConfig.left, playerConfig.rotate);
 
-	if (config_game.state === 2) requestAnimationFrame(animateFly);
+	if (config_game.state === 2) encreaseCoeff();
+	if (config_game.state > 1) requestAnimationFrame(animateFly);
 }
+
 
 function checkGameOver() {
 	if (config_game.start_coeff >= config_game.current_coeff) {
@@ -345,9 +345,10 @@ function addLooseColorButtons() {
 }
 
 function flyAirplaneWhenLoose() {
-	player.style.transition = `all 2s ease 0s`;
-	player.style.left = `150%`;
-	player.style.bottom = `110%`;
+	playerConfig.left = 150;
+	playerConfig.bottom = 110;
+	drawItemToCoord(player, playerConfig.bottom, playerConfig.left, playerConfig.rotate);
+	drawCanvas();
 }
 
 //========
@@ -451,9 +452,9 @@ function drawCanvas() {
 
 	// config_game.timerDraw = setInterval(() => {
 	if (config_game.state === 3) {
-		setTimeout(() => {
-			// if (config_game.timerDraw) clearInterval(config_game.timerDraw);
-		}, 800);
+		// setTimeout(() => {
+		// if (config_game.timerDraw) clearInterval(config_game.timerDraw);
+		// }, 800);
 	}
 	let coord_x = pin.getBoundingClientRect().left - config_canvas.xOffset;
 	let coord_y = pin.getBoundingClientRect().top - config_canvas.yOffset;
@@ -535,9 +536,10 @@ export function resetGame() {
 	removeGameColorButtons();
 	clearCanvas();
 
-	fieldBody?.classList.add('_loader');
+	fieldBody.classList.add('_loader');
 
-	if (fieldBody?.classList.contains('_fly')) fieldBody?.classList.remove('_fly');
+	if (fieldBody.classList.contains('_fly')) fieldBody.classList.remove('_fly');
+	// if (fieldBody.classList.contains('_lose')) fieldBody.classList.remove('_lose');
 
 	setTimeout(() => {
 		fieldBody?.classList.remove('_loader');
