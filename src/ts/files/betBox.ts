@@ -1,5 +1,5 @@
 import { startData } from './startData';
-import { initStartData, writeBet } from './script';
+import { writeBet } from './initStartData';
 import { noMoney } from './functions';
 
 document.addEventListener('click', (e) => {

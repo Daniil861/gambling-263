@@ -29,89 +29,9 @@
 
 			@@include('html/_shop.htm',{})
 
-			<div class="wrapper__game game">
-				<div class="game__body">
-					<div class="game__content">
-						<div class="game__header header">
-							<div class="header__body">
-								<button type="button" data-button="game-home" class="header__button-home button _fz-16 _upper">
-									<span>Menu</span>
-								</button>
-								@@include('html/_score-box.htm',{"parent": "game__score-box"})
-							</div>
-						</div>
-						<div class="game__field field">
-							<div class="field__body">
-								<div class="field__coeff">0m</div>
-								<div data-hero class="field__airplane">
-									<img src="@img/shop/shop-1.png" alt="Image">
-									<div class="field__pin"></div>
-								</div>
-								<div class="field__loader">
-									<img src="@img/icons/cloud.svg" alt="Icon">
-									<p>waiting for a new round</p>
-								</div>
-								<canvas width="500" height="500" class="ctx"></canvas>
-							</div>
-						</div>
-						<div class="game__footer footer">
-							<div class="footer__body">
-								<div class="footer__bet-box">
-									<div class="footer__buttons">
-										<div class="footer__button-box-auto">
-											<span></span>
-											<div data-footer-button="auto" class="footer__button">
-												<p>Autobet</p>
-											</div>
-										</div>
-										<div class="footer__current-bet">
-											<span>x</span>
-											<p class="footer__current-bet-coeff">2.0</p>
-										</div>
-									</div>
-									<div class="footer__bet">
-										<div class="footer__block-bet block-bet">
-											<div class="block-bet__body">
-												<div class="block-bet__controls">
-													<div data-button="bet-minus" class="block-bet__minus">-</div>
-													<div class="block-bet__bet">
-														<div class="block-bet__coins _bet">50</div>
-														<div class="block-bet__icon icon-game"><span></span></div>
-													</div>
-													<div data-button="bet-plus" class="block-bet__plus">+</div>
-												</div>
-												<div class="block-bet__btns">
-													<div data-bet="50" class="block-bet__btn">
-														<p>+50</p>
-													</div>
-													<div data-bet="100" class="block-bet__btn">
-														<p>+100</p>
-													</div>
-													<div data-bet="200" class="block-bet__btn">
-														<p>+200</p>
-													</div>
-													<div data-bet="500" class="block-bet__btn">
-														<p>+500</p>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="footer__button-bet">
-											<p>Bet</p>
-										</div>
-									</div>
-								</div>
-								<div class="footer__cash-out-box">
-									<div class="footer__button-cash _hold">
-										<p>win</p>
-										<div class="footer__current-count">0</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			@@include('html/_aviator.htm',{})
+
+
 
 		</div>
 	</div>

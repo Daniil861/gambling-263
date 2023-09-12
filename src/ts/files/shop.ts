@@ -1,6 +1,6 @@
 import { deleteMoney, noMoney, checkRemoveAddClass, getDigFormat } from "./functions";
 import { startData } from "./startData";
-import { config_game, drawAirplaneCoeff } from './script';
+import { config_game, drawAirplaneCoeff } from './aviator';
 
 
 const heroItems = document.querySelectorAll('[data-hero] img');

@@ -3,7 +3,7 @@ import {
 	checkObjectRightCollision, checkObjectLeftCollision, checkObjectTopCollision, checkObjectDownCollision, checkCollision
 } from './functions';
 import { showFinalScreen } from './finalScreen';
-import { openNewLevel } from './script';
+import { openNewLevel } from './initStartData';
 
 // arkanoid
 

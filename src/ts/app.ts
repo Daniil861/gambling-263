@@ -80,5 +80,8 @@ import "./files/betBox";
 // import "./files/loaderPre.js";
 // import "./files/progressLogic.js";
 // import "./files/arkanoid.js";
+import "./files/aviator";
+import "./files/initStartData";
+import "./files/animateScoreIcon";
 
 //============================================================================================================================================================================================================================================
